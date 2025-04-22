@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <title>MindMochi - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #CFEBD0, #A3D9A5);
+      color: #5E5442;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .logo {
+      width: 200px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .lab-bubble {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      animation: bubble 8s infinite ease-in;
+    }
+    @keyframes bubble {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px);
+        opacity: 0;
+      }
+    }
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #837B6C;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="MindMochi Logo" class="logo" />
+  <h1>MindMochi is cooking up something sweet 🍡🧠</h1>
+  <p>Your favorite MCAT study companion is almost here. Stay curious!</p>
+
+  <div class="footer">&copy; 2025 MindMochi. All rights reserved.</div>
+
+  <!-- Fun floating bubbles -->
+  <script>
+    function createBubble() {
+      const bubble = document.createElement('div');
+      bubble.classList.add('lab-bubble');
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.animationDuration = (6 + Math.random() * 4) + 's';
+      document.body.appendChild(bubble);
+      setTimeout(() => bubble.remove(), 8000);
+    }
+    setInterval(createBubble, 500);
+  </script>
+</body>
+</html>
